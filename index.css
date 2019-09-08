@@ -1,0 +1,139 @@
+.circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(to left top,#dd5eb7 25%,#fff);
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+    border:1px solid #777777;
+}
+
+.circle::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -60px;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(to right top,#dd5eb7 25%,#fff);
+    transform-origin: left -60px;
+    z-index: 2;
+    animation: rotate-circle-left 10s linear forwards;
+}
+
+.circle::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 60px;
+    width: 120px;
+    height: 120px;
+    background: #d425a0;
+    transform-origin: left 60px;
+    z-index: 3;
+    animation: rotate-circle-right 10s linear forwards;
+}
+
+
+.circle .circle-inner {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    width: 90px;
+    height: 57px;
+    padding-top: 35px;
+    background: #dd5eb7;
+    border-radius: 50%;
+    border:1px solid #777;
+    z-index: 4;
+}
+.upper {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    width: 120px;
+    height: 60px;
+    background: #d425a0;
+    transform-origin: center 0px;
+    z-index: 6;
+    animation: rotate-circle-upper 10s linear forwards;
+}
+
+.all{
+    background: #d425a0;
+    padding: 10px;
+    z-index: -1;
+    animation: color-change 300ms linear forwards;
+}
+.title{
+    position: absolute;
+    top:67px;
+    left:37px;
+    z-index: 1000;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+@keyframes rotate-circle-right {
+    0%   {
+        transform: rotate(-90deg);
+        background: #d425a0;
+    }
+    50%  {
+        transform: rotate(0deg);
+        background: #d425a0;
+    }
+    50.01% {
+        transform: rotate(0deg);
+        background: #d425a0;
+    }
+    100% {
+        transform: rotate(90deg);
+        background: #d425a0;
+    }
+}
+
+@keyframes rotate-circle-upper {
+    0%   {
+        transform: rotate(-360deg);
+        background: #d425a0;
+    }
+    50%  {
+        transform: rotate(-270deg);
+        background: #d425a0;
+    }
+    50.01% {
+        transform: rotate(-270deg);
+        background: #d425a0;
+    }
+    100% {
+        transform: rotate(-180deg);
+        background: #d425a0;
+    }
+}
+
+
+@keyframes rotate-circle-left {
+    0%   { transform: rotate(90deg); }
+    50%  { transform: rotate(90deg); }
+    100% { 
+        transform: rotate(90deg); 
+        /*background: #f00;*/
+    }
+}
+
+@keyframes color-change{
+    0%{
+        background: #fff;
+    }
+    100%{
+        background: #d425a0;
+    }
+}
