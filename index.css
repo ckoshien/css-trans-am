@@ -13,6 +13,7 @@ body{
     overflow: hidden;
     z-index: 1;
     border:1px solid #777777;
+    animation: circle-color 10s linear forwards;
 }
 
 .circle::before {
@@ -271,5 +272,18 @@ img{
     }
     100%{
         background: #d425a0;
+    }
+}
+
+@keyframes circle-color{
+    50%{
+        background: linear-gradient(to left top,#dd5eb7 25%,#fff);
+        opacity: 1;
+    }
+    60%,70%,80%,90%,100%{
+        background: #ff606e;
+    }
+    65%,75%,85%,95%{
+        background: linear-gradient(to left top,#dd5eb7 25%,#fff);
     }
 }
