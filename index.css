@@ -112,11 +112,11 @@ body{
     z-index: 9;
 }
 
-.all{
+.trans-am{
     background: radial-gradient(circle at top 60px left 60px, #d425a0 40%,#000);
     padding: 10px;
     z-index: 2;
-    animation: color-change 1s linear forwards;
+    animation: fade-in-out 12s linear forwards;
     height: 260px;
     width: 260px;
 }
@@ -127,7 +127,6 @@ body{
     z-index: 1000;
     font-size: 36px;
     font-weight: 700;
-    animation: color-change 1s;
 }
 .sub_title{
     position: absolute;
@@ -136,7 +135,6 @@ body{
     z-index: 1000;
     font-size: 12px;
     text-align: center;
-    animation: color-change 1s;
     
 }
 
@@ -270,12 +268,18 @@ img{
     }
 }
 
-@keyframes color-change{
+@keyframes fade-in-out{
     0%{
         opacity: 0;
     }
-    100%{
+    16%{
         opacity: 1;
+    }
+    84%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
     }
 }
 
